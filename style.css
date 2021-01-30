@@ -1,139 +1,203 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
 }
-body{
-    font-family: 'Roboto', sans-serif;
-    background:linear-gradient(rgba(0, 217, 255, 0.4), rgba(0, 0, 0, 0.4)), url("images/ship.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: scroll;
-    background-size: cover;
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(rgba(0, 217, 255, 0.4), rgba(0, 0, 0, 0.4)),
+    url("images/ship.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-nav{
-    height: 50px;
-    width: 100%;
-    padding: 20px 0;
+nav {
+  height: 15px;
+  width: 100%;
+  padding: 20px 0;
 }
-.container{
-    width: 1200px;
-    max-width: 85%;
-    margin: 0 auto;
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
 }
-nav ul{
-    display: flex;
-    justify-content: flex-start;
-    margin: 0px 6px;
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px 6px;
 }
-nav ul li a{
-    color: #fff;
-    padding: 10px;
-    text-transform: uppercase;
-    margin-left: 30px;
+nav ul li a {
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-left: 30px;
 }
-nav ul li a:hover, a.active{
-    background-color: #E33741;
-    border-radius: 5px;
+nav ul li a:hover,
+a.active {
+  background-color: #e33741;
+  border-radius: 5px;
 }
-.main-content{
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 70px;
-    align-items: center;
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 70px;
+  align-items: center;
 }
-.booking-content{
-    color: #fff;
-    width: 100%;
-    float: left;
-    margin-left: 50px;
+.booking-content {
+  color: #fff;
+  width: 100%;
+  float: left;
+  margin-left: 50px;
 }
-.booking-content h1{
-    font-size: 70px;
-    text-transform: uppercase;
-    font-family: 'Bebas Neue', cursive;
-    font-weight: 500;
+.booking-content h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", cursive;
+  font-weight: 500;
 }
-.booking-form{
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    float: right;
-    width: 65%;
-    margin-left: 180px;
+.booking-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  float: right;
+  width: 65%;
+  margin-left: 180px;
 }
-.booking-form h3{
-    margin: 10px 0px;
+.booking-form h3 {
+  margin: 10px 0px;
 }
-.booking-form  .input-group{
-    margin: 10px 0;
+.booking-form .input-group {
+  margin: 10px 0;
 }
-.booking-form  .calculations{
-    margin: 10px 0;
+.booking-form .calculations {
+  margin: 10px 0;
 }
-.booking-form  .calculations p{
-    font-weight: 500;
-    margin-bottom: 10px;
+.booking-form .calculations p {
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-.booking-form input{
-    width: 100%;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background: #F3F5FF;
-    border-radius: 4px;
-    margin: 10px 0;
+.booking-form input {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: #f3f5ff;
+  border-radius: 4px;
+  margin: 10px 0;
 }
-.f-class{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.f-class {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.inp-width{
-    min-width: 300px;
+.inp-width {
+  min-width: 300px;
 }
-.plus-minus-btn{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1em;
-
+.plus-minus-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
 }
 .plus-minus-btn button {
-    font-size: 2rem;
-    border: none;
-    background: none;
-    outline: none;
-    padding: .2em .4em;
-    border-radius: .2em;
-    cursor: pointer;
-
+  font-size: 2rem;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  cursor: pointer;
 }
 .plus-minus-btn button:first-of-type {
-    margin-left: .5em;
+  margin-left: 0.5em;
+}
+.booking-form .inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.btn-style {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  background-color: #e33741;
+}
+.amount {
+  display: flex;
+  justify-content: space-between;
+}
 
+/* modal */
+.modal-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(20, 21, 21, 0.618);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* hide until needed */
+  pointer-events: none;
+  opacity: 0;
 }
-.booking-form .inputs{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+.modal-outer.open {
+  pointer-events: all;
+  opacity: 1;
 }
-.btn-style{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-weight: 500;
-    background-color:  #E33741;
+
+.modal-inner {
+  width: 500px;
+  max-width: 800px;
+  background: rgb(242, 239, 239);
+  min-height: 450px;
+  padding: 2em;
+  border-radius: 0.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
 }
-.amount{
-    display: flex;
-    justify-content: space-between;
+
+.modal-inner img {
+  width: 6rem;
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.modal-inner h3,
+h1 {
+  text-transform: capitalize;
+}
+.modal-inner h3 {
+  color: #32ba7c;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.modal-inner h1 {
+  color: #e33741;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
 }

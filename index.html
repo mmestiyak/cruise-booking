@@ -35,24 +35,24 @@
         </div>
 
 
-        <form class="booking-form" id="booking-form">
+        <div class="booking-form" id="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                <input id="flying-from" class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <input id="flying-to" class="inp-style" type="text" name="" placeholder="New York, United States">
             </div>
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                    <input id="departure" class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input id="return" class="inp-style" type="date" name="">
                 </div>
             </div>
             <div class="input-group f-class">
@@ -104,9 +104,13 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn-style">Book Now</button>
-        </form>
+            <button id="btn-submit" class="btn-style ">Book Now</button>
+        </div>
     </main>
+    <div class="modal-outer">
+        <div class="modal-inner">
+        </div>
+    </div>
 <script src="js/app.js">
    
 </script>

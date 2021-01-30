@@ -1,8 +1,5 @@
 const bookingForm = document.getElementById("booking-form");
-const inputs = document.querySelectorAll('input[number]');
-inputs.forEach(input => {
-  input.addEventListener('input')
-})
+
 function compute() {
   const subTotalElement = document.getElementById("sub-total");
   const taxElement = document.getElementById("tax");
@@ -43,7 +40,64 @@ function bookingFormClickHandler(event) {
     updateInput(clickedElement);
     compute();
   }
+  if (event.target === document.getElementById("btn-submit")) {
+    showModal();
+  }
 }
 bookingForm.addEventListener("click", bookingFormClickHandler);
 
+/* MODAL section */
+const modalOuter = document.querySelector(".modal-outer");
 
+function showModal() {
+  const modalInner = modalOuter.querySelector(".modal-inner");
+  const firstClassTicket = Number(
+    document.querySelector('[data-price="150"]').value
+  );
+  const economoyTicket = Number(
+    document.querySelector('[data-price="100"]').value
+  );
+  let modalInnerHtml;
+
+  if (firstClassTicket > 0) {
+    modalInnerHtml = `<h3>You Booked ${firstClassTicket} First Class Ticket</h3>`;
+  }
+  if (economoyTicket > 0) {
+    modalInnerHtml = `<h3>You Booked ${economoyTicket} Economy Ticket</h3>`;
+  }
+  if (firstClassTicket > 0 && economoyTicket > 0) {
+    modalInnerHtml = `<h3> You Booked ${firstClassTicket} First Class Ticket and ${economoyTicket} Economy Ticket </h3>`;
+  }
+
+  modalInnerHtml += `<h3> Total cost including 10% tax is $${
+    document.getElementById("total").innerText
+  }</h3>`;
+  modalInner.insertAdjacentHTML(
+    "afterbegin",
+    `
+    <img src="./images/success.svg" alt="">
+
+  `
+  );
+  modalInner.insertAdjacentHTML("beforeend", modalInnerHtml);
+
+  if (firstClassTicket === 0 && economoyTicket === 0) {
+    modalInner.innerHTML = `
+    <img src="./images/success.svg" alt="">
+    <h1> You Didn't Book any Ticket!<h1>
+    `;
+  }
+  modalOuter.classList.add("open");
+}
+
+function hideModal(modal) {
+  modal.classList.remove("open");
+  modal.querySelector(".modal-inner").innerHTML = "";
+}
+
+modalOuter.addEventListener("click", function (e) {
+  const isOutside = !e.target.closest(".modal-inner");
+  if (isOutside) {
+    hideModal(e.currentTarget);
+  }
+});
