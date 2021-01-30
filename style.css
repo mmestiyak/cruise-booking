@@ -186,18 +186,12 @@ h1 {
   text-transform: capitalize;
 }
 .modal-inner h3 {
-  color: #32ba7c;
+  /* color: #32ba7c; */
+  color: #555;
   font-size: 1rem;
   margin-top: 1rem;
 }
 .modal-inner h1 {
   color: #e33741;
   margin: 0 auto;
-}
-
-@media (max-width: 800px) {
-  .main-content {
-    grid-template-columns: 1fr;
-    justify-content: center;
-  }
 }

@@ -32,7 +32,6 @@ function updateInput(element) {
   input.value = inputValue;
 }
 function bookingFormClickHandler(event) {
-  event.preventDefault();
   const clickedElement = event.target;
   const plusButton = clickedElement.dataset.operation === "plus";
   const minusButton = clickedElement.dataset.operation === "minus";
@@ -48,9 +47,8 @@ bookingForm.addEventListener("click", bookingFormClickHandler);
 
 /* MODAL section */
 const modalOuter = document.querySelector(".modal-outer");
-
+const modalInner = modalOuter.querySelector(".modal-inner");
 function showModal() {
-  const modalInner = modalOuter.querySelector(".modal-inner");
   const firstClassTicket = Number(
     document.querySelector('[data-price="150"]').value
   );
@@ -66,7 +64,7 @@ function showModal() {
     modalInnerHtml = `<h3>You Booked ${economoyTicket} Economy Ticket</h3>`;
   }
   if (firstClassTicket > 0 && economoyTicket > 0) {
-    modalInnerHtml = `<h3> You Booked ${firstClassTicket} First Class Ticket and ${economoyTicket} Economy Ticket </h3>`;
+    modalInnerHtml = `<h3> You Booked ${firstClassTicket} First Class Ticket & ${economoyTicket} Economy Ticket </h3>`;
   }
 
   modalInnerHtml += `<h3> Total cost including 10% tax is $${
@@ -83,16 +81,23 @@ function showModal() {
 
   if (firstClassTicket === 0 && economoyTicket === 0) {
     modalInner.innerHTML = `
-    <img src="./images/success.svg" alt="">
+    <img src="./images/report.svg" alt="">
     <h1> You Didn't Book any Ticket!<h1>
     `;
   }
   modalOuter.classList.add("open");
+
+
 }
 
 function hideModal(modal) {
   modal.classList.remove("open");
   modal.querySelector(".modal-inner").innerHTML = "";
+  document.getElementById('total').innerText = 0;
+  document.getElementById('sub-total').innerText = 0;
+  document.getElementById('tax').innerText = 0;
+  document.querySelectorAll("[data-price]").forEach((elem) => (elem.value = 0));
+
 }
 
 modalOuter.addEventListener("click", function (e) {
