@@ -86,18 +86,11 @@ function showModal() {
     `;
   }
   modalOuter.classList.add("open");
-
-
 }
 
 function hideModal(modal) {
   modal.classList.remove("open");
   modal.querySelector(".modal-inner").innerHTML = "";
-  document.getElementById('total').innerText = 0;
-  document.getElementById('sub-total').innerText = 0;
-  document.getElementById('tax').innerText = 0;
-  document.querySelectorAll("[data-price]").forEach((elem) => (elem.value = 0));
-
 }
 
 modalOuter.addEventListener("click", function (e) {
